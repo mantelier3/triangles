@@ -138,8 +138,8 @@ thresh, tri_bw = cv.threshold(
     tri_grayscale, 60, 255, cv.THRESH_BINARY)
 tri_bw = cv.morphologyEx(tri_bw, cv.MORPH_OPEN, (3, 3))
 N, labels, stats, centroids = cv.connectedComponentsWithStats(tri_bw)
-tri_edges = cv.Canny(tri_smooth, 100, 200)
-lines = cv.HoughLines(tri_edges, 0.7, math.pi / 180, 40, 0)
+# tri_edges = cv.Canny(tri_smooth, 100, 200)
+# lines = cv.HoughLines(tri_edges, 0.7, math.pi / 180, 40, 0)
 triangles_backup = np.copy(triangles)
 results = np.zeros(triangles.shape)
 
